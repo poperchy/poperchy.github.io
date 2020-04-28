@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="Iconic" horiz-adv-x="56.966">
+    <font-face font-family="Iconic"
+      units-per-em="56.966" ascent="56.966"
+      descent="0" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="searching"
+      unicode="&#xE001;"
+      horiz-adv-x="56.966" d="M55.146 5.079L41.588 19.18C45.074 23.324 46.984 28.538 46.984 33.966C46.984 46.648 36.666 56.966 23.984 56.966S0.984 46.648 0.984 33.966S11.302 10.966 23.984 10.966C28.745 10.966 33.282 12.402 37.161 15.128L50.822 0.92C51.393 0.327 52.161 0 52.984 0C53.763 0 54.502 0.297 55.063 0.837C56.255 1.984 56.293 3.886 55.146 5.079zM23.984 50.966C33.358 50.966 40.984 43.34 40.984 33.966S33.358 16.966 23.984 16.966S6.984 24.592 6.984 33.966S14.61 50.966 23.984 50.966z" />
+  </font>
+</defs>
+</svg>
