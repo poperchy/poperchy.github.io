@@ -14,20 +14,27 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
         body {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background: #393939;
-            padding-top: 80px;
+            padding-top: 40px;
             color: white;
-
             background: linear-gradient(45deg, #0f172a, #1e293b, #312e81, #3b0764);
             background-size: 400% 400%;
             animation: gradient 10s ease infinite;
@@ -105,50 +112,50 @@
 <body>
 <div class="slider owl-carousel  owl-theme">
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/k9or77" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/k9or77" playsinline></video>
     </div>
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/2fbfyl" playsinline></video>
-    </div>
-
-    <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/v8rtiq" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/2fbfyl" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/1rm4lp" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/v8rtiq" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/mwi2th" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/1rm4lp" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/fuk76x" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/mwi2th" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/xx4q9t" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/fuk76x" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/y7iprk" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/xx4q9t" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/bmlfil" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/y7iprk" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/pc8xoq" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/bmlfil" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/j0sru1" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/pc8xoq" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto"  controls src="https://rb.gy/9ksgn8" playsinline></video>
+        <video preload="auto" controls src="https://rb.gy/j0sru1" playsinline></video>
+    </div>
+
+    <div class="item">
+        <video preload="auto" controls src="https://rb.gy/9ksgn8" playsinline></video>
     </div>
 
     <!--    <div class="item">-->
@@ -202,22 +209,8 @@
             if (isUserInteracted) {
                 currentVideo.play().catch(() => console.warn("Autoplay prevented"));
             }
-
-            let interval = setInterval(() => {
-                if (currentVideo.ended) {
-                    owl.trigger('next.owl.carousel');
-                    clearInterval(interval);
-                }
-            }, 100);
-
         }
 
-        $('body').on('click', function () {
-            if (!isUserInteracted) {
-                isUserInteracted = true;
-                startProgress({target: $('.owl-carousel')[0]});
-            }
-        });
     });
 </script>
 </body>
