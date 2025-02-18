@@ -113,50 +113,50 @@
 <body>
 <div class="slider owl-carousel  owl-theme">
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/k9or77" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/k9or77" playsinline></video>
     </div>
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/2fbfyl" playsinline></video>
-    </div>
-
-    <div class="item">
-        <video preload="auto" controls src="https://rb.gy/v8rtiq" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/2fbfyl" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/1rm4lp" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/v8rtiq" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/mwi2th" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/1rm4lp" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/fuk76x" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/mwi2th" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/xx4q9t" playsinline></video>
+        <video preload="auto" poster="poster.webp"  controls src="https://rb.gy/fuk76x" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/y7iprk" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/xx4q9t" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/bmlfil" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/y7iprk" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/pc8xoq" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/bmlfil" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/j0sru1" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/pc8xoq" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/9ksgn8" playsinline></video>
+        <video preload="auto" poster="poster.webp" controls src="https://rb.gy/j0sru1" playsinline></video>
+    </div>
+
+    <div class="item">
+        <video preload="auto" poster="poster.webp"controls src="https://rb.gy/9ksgn8" playsinline></video>
     </div>
 
     <!--    <div class="item">-->
@@ -178,37 +178,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
 
+
     document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("video").forEach(video => {
             video.volume = 0.1;
-            const src = video.getAttribute("src");
-            video.removeAttribute("src"); // Отключаем мгновенную загрузку
-
-            // Загружаем видео только после полной загрузки страницы
-            window.addEventListener("load", () => {
-                video.setAttribute("src", src);
-                setPoster(video);
-            });
         });
     });
 
-    function setPoster(video) {
-        const canvas = document.createElement("canvas");
-        video.addEventListener("loadeddata", async () => {
-            video.currentTime = 1; // Перематываем на 1 сек.
-            await new Promise(resolve => video.addEventListener("seeked", resolve, { once: true }));
-
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            const ctx = canvas.getContext("2d");
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            video.setAttribute("poster", canvas.toDataURL("image/jpeg"));
-        }, { once: true });
-    }
-
-    // Инициализация Owl Carousel после загрузки
     $(document).ready(function () {
+
         const owl = $('.owl-carousel');
         owl.owlCarousel({
             items: 1,
@@ -219,20 +197,22 @@
             onTranslated: startProgress
         });
 
+        let videos = $('video');
         let isUserInteracted = false;
+
         function startProgress(event) {
             let currentItem = $(event.target).find('.owl-item.active');
             let currentVideo = currentItem.find('video')[0];
 
             if (!currentVideo) return;
-            $("video").each((_, v) => v.pause());
+            videos.each((_, v) => v.pause());
 
             if (isUserInteracted) {
                 currentVideo.play().catch(() => console.warn("Autoplay prevented"));
             }
         }
-    });
 
+    });
 </script>
 </body>
 </html>
