@@ -105,50 +105,50 @@
 <body>
 <div class="slider owl-carousel  owl-theme">
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/k9or77" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/k9or77" playsinline></video>
     </div>
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/2fbfyl" playsinline></video>
-    </div>
-
-    <div class="item">
-        <video preload="auto" controls src="https://rb.gy/v8rtiq" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/2fbfyl" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/1rm4lp" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/v8rtiq" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/mwi2th" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/1rm4lp" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/fuk76x" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/mwi2th" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/xx4q9t" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/fuk76x" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/y7iprk" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/xx4q9t" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/bmlfil" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/y7iprk" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/pc8xoq" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/bmlfil" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/j0sru1" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/pc8xoq" playsinline></video>
     </div>
 
     <div class="item">
-        <video preload="auto" controls src="https://rb.gy/9ksgn8" playsinline></video>
+        <video preload="auto"  controls src="https://rb.gy/j0sru1" playsinline></video>
+    </div>
+
+    <div class="item">
+        <video preload="auto"  controls src="https://rb.gy/9ksgn8" playsinline></video>
     </div>
 
     <!--    <div class="item">-->
@@ -169,20 +169,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
+
+
     document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("video").forEach(video => {
             video.volume = 0.1;
         });
     });
-    $(document).ready(function () {
 
+    $(document).ready(function () {
 
         const owl = $('.owl-carousel');
         owl.owlCarousel({
             items: 1,
             loop: false,
             autoplay: false,
-            autoplayTimeout: 5000,
+            // autoplayTimeout: 5000,
             autoplayHoverPause: true,
             onTranslated: startProgress
         });
